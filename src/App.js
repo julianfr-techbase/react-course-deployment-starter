@@ -49,12 +49,7 @@ export default function App() {
           <form onSubmit={onSubmit}>
             <label htmlFor="title">Title</label>
             <br />
-            <input
-              type="text"
-              id="title"
-              value={todoInput}
-              onChange={(e) => setTodoInput(e.target.value)}
-            />
+            <input type="text" id="title" value={todoInput} onChange={(e) => setTodoInput(e.target.value)} />
             <br />
             <button type="submit">Submit</button>
           </form>
@@ -64,18 +59,10 @@ export default function App() {
               const { id, title, selected } = todo;
               return (
                 <li key={id} data-cy={`todo-${title}`}>
-                  <label
-                    className={selected ? "todoText" : null}
-                    htmlFor={`todoToggle${id}`}
-                  >
+                  <label className={selected ? "todoText" : null} htmlFor={`todoToggle${id}`}>
                     {title}
                   </label>
-                  <input
-                    type="checkbox"
-                    selected={selected}
-                    id={`todoToggle${id}`}
-                    onChange={() => toggleTodo(id)}
-                  />
+                  <input type="checkbox" selected={selected} id={`todoToggle${id}`} onChange={() => toggleTodo(id)} />
                   <button type="button" onClick={() => deleteTodo(id)}>
                     Remove
                   </button>
